@@ -19,6 +19,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "crafics/cqrs-php" : "dev-master"
+        "crafics/cqrs-php" : "dev-master",
+        "chrisboulton/php-resque": "1.2.x"
     }
 }
