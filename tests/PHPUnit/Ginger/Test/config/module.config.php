@@ -7,21 +7,23 @@
  * file that was distributed with this source code.
  */
 return array(
+    'service_manager' => array(
+        'invokables' => array(
+            'test.core.command_handler' => 'Ginger\Test\Mock\Core\CommandHandler',
+        ),
+    ),
     'cqrs' => array(
-        'default_bus' => \Ginger\Core\Definition::SYNC_BUS,
         'adapters' => array(
             'Cqrs\Adapter\ArrayMapAdapter' => array(
                 'buses' => array(
                     'Ginger\Core\Cqrs\Bus\CoreSyncBus' => array(
-                        
-                    ),
-                    'Ginger\Core\Cqrs\Bus\AsyncPhpResqueCommandBus' => array(
-                        //do not map commands here, use the Ginger\Core\Cqrs\Bus\CoreSyncBus
-                        //to register command handlers
-                        //the async bus works as a proxy to handle commands in background threads
+                        'Ginger\Test\Mock\Core\CheckCommandInvocationCommand' => array(
+                            'alias' => 'test.core.command_handler',
+                            'method' => 'checkCommandInvocation'
+                        )
                     )
                 )
             )
-        )
+        )    
     )
 );
