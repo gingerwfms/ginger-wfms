@@ -99,12 +99,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/crafics/cqrs-php.git",
-                "reference": "2a4144b9d96a532c472c0dacd3aaed0af6009b86"
+                "reference": "b2780542f84ac7b474b30e1481f15f7cb8f7686c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crafics/cqrs-php/zipball/2a4144b9d96a532c472c0dacd3aaed0af6009b86",
-                "reference": "2a4144b9d96a532c472c0dacd3aaed0af6009b86",
+                "url": "https://api.github.com/repos/crafics/cqrs-php/zipball/b2780542f84ac7b474b30e1481f15f7cb8f7686c",
+                "reference": "b2780542f84ac7b474b30e1481f15f7cb8f7686c",
                 "shasum": ""
             },
             "require-dev": {
@@ -141,7 +141,7 @@
                 "framework",
                 "php"
             ],
-            "time": "2013-11-07 19:53:16"
+            "time": "2013-11-09 20:48:41"
         },
         {
             "name": "zendframework/zendframework",

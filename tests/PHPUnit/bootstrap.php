@@ -10,4 +10,6 @@ chdir(__DIR__ . '/../../');
 
 require 'module/Ginger/Core/Bootstrap.php';
 
-\Ginger\Core\Bootstrap::init();
+$activateTestEnv = true;
+
+\Ginger\Core\Bootstrap::init($activateTestEnv);
