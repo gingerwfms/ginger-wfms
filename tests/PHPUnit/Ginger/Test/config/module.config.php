@@ -10,6 +10,7 @@ return array(
     'service_manager' => array(
         'invokables' => array(
             'test.core.command_handler' => 'Ginger\Test\Mock\Core\CommandHandler',
+            'test.core.event_listener' => 'Ginger\Test\Mock\Core\EventListener',
         ),
     ),
     'cqrs' => array(
@@ -20,6 +21,10 @@ return array(
                         'Ginger\Test\Mock\Core\CheckCommandInvocationCommand' => array(
                             'alias' => 'test.core.command_handler',
                             'method' => 'checkCommandInvocation'
+                        ),
+                        'Ginger\Test\Mock\Core\CheckEventPublishedEvent' => array(
+                            'alias' => 'test.core.event_listener',
+                            'method' => 'onCheckEventPublished'
                         )
                     )
                 )

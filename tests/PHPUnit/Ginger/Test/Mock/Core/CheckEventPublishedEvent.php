@@ -6,22 +6,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Ginger\Core;
+namespace Ginger\Test\Mock\Core;
 
+use Cqrs\Event\EventInterface;
+use Cqrs\Message\Message;
 /**
- * Definition class
+ * Event CheckEventPublishedEvent
  * 
  * @author Alexander Miertsch <kontakt@codeliner.ws>
  */
-class Definition
+class CheckEventPublishedEvent extends Message implements EventInterface
 {
-    const SYNC_BUS = 'sync-bus';
-    
-    const ASYNC_COMMAND_BUS = 'async-command-bus';
-    
-    const ASYNC_COMMAND_QUEUE = 'ginger-command-queue';
-    
-    const ASYNC_EVENT_BUS = 'async-event-bus';
-    
-    const ASYNC_EVENT_QUEUE = 'ginger-event-queue';
 }

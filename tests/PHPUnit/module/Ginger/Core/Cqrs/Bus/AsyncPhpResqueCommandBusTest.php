@@ -9,12 +9,6 @@ use Ginger\Test\Mock\Core\AsyncPhpResqueCommandBus;
  */
 class AsyncPhpResqueCommandBusTest extends \PHPUnit_Framework_TestCase
 {
-
-    /**
-     * @var AsyncPhpResqueCommandBus
-     */
-    protected $object;
-    
     protected $serviceManager;
     
     

@@ -63,7 +63,7 @@ abstract class AbstractAsyncCommandBus implements BusInterface
     {
         throw new Exception\BadMethodCallException(
             "getCommandHandlerMap is not implemented by the async-command-bus.\n"
-            . "Please use the Ginger\\Core\\Definition::SYNC_COMMAND_BUS to register your command-handler."
+            . "Please use the Ginger\\Core\\Definition::SYNC_BUS to register your command-handler."
         );
     }
     
@@ -71,7 +71,7 @@ abstract class AbstractAsyncCommandBus implements BusInterface
     {
         throw new Exception\BadMethodCallException(
             "mapCommand is not implemented by the async-command-bus.\n"
-            . "Please use the Ginger\\Core\\Definition::SYNC_COMMAND_BUS to register your command-handler."
+            . "Please use the Ginger\\Core\\Definition::SYNC_BUS to register your command-handler."
         );
     }
     
