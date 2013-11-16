@@ -18,48 +18,49 @@ interface CrudRepositoryInterface
     /**
      * Find data for a single resource
      * 
-     * @param ResourceId|string $resourceId
+     * @param Resource\ResourceId $resourceId
      * 
      * @return ResourceData|null
      */
-    public function find($resourceId);
+    public function read(Resource\ResourceId $resourceId);
     
     /**
-     * Get all/filtered set of resources
-     * 
-     * @param array $filter Simple Key/Value criteria mapping (all critera must match)
+     * Get all resources
+     *      
      * @return ResourceData[]
      */
-    public function findAll(array $filter);
+    public function listAll();
     
     /**
      * Create new resource from given ResourceData
      * 
-     * @param ResourceData $resourceData
+     * @param Resource\ResourceData $resourceData
      * 
-     * @return ResourceData Contains the new assigned ResourceId
+     * @return Resource\ResourceData Contains the new assigned ResourceId
+     * 
+     * @throws \Ginger\Core\Exception\RuntimeException If create could not be performed
      */
-    public function create(ResourceData $resourceData);
+    public function create(Resource\ResourceData $resourceData);
     
     /**
      * Update resource data
      * 
-     * @param ResourceData $resourceData Contains all data that should be updated
+     * @param Resource\ResourceData $resourceData Contains all data that should be updated
      * 
-     * @return ResourceData All data of resource including the updated properties
+     * @return Resource\ResourceData All data of resource including the updated properties
      * 
      * @throws \Ginger\Core\Exception\RuntimeException If update could not be performed
      */
-    public function update(ResourceData $resourceData);
+    public function update(Resource\ResourceData $resourceData);
     
     /**
      * Delete the resource
      * 
-     * @param ResourceId|string $resourceId
+     * @param Resource\ResourceId $resourceId
      * 
      * @return void
      * 
      * @throws \Ginger\Core\Exception\RuntimeException If deletion could not be performed
      */
-    public function delete($resourceId);
+    public function delete(Resource\ResourceId $resourceId);
 }
