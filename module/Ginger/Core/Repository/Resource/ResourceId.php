@@ -22,7 +22,7 @@ class ResourceId
      * @var string
      */
     protected $value;
-    
+
     /**
      * Construct with the string representation of the ResourceId
      * 
@@ -43,7 +43,7 @@ class ResourceId
             throw new InvalidArgumentException('ResourceId must not be empty');
         }
         
-        $this->value = $resourceId;
+        $this->value = (string)$resourceId;
     }
     
     /**
@@ -54,5 +54,10 @@ class ResourceId
     public function getValue()
     {
         return $this->value;
+    }
+    
+    public function __toString()
+    {
+        return $this->getValue();
     }
 }
