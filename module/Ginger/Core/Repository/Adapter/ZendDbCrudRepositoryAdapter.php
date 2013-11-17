@@ -11,6 +11,7 @@ namespace Ginger\Core\Repository\Adapter;
 use Zend\Db\Adapter\Adapter as ZendDbAdapter;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Json\Json;
+use Zend\Stdlib\ArrayUtils;
 use Ginger\Core\Repository\Resource;
 use Ginger\Core\Exception\RuntimeException;
 /**
@@ -88,7 +89,7 @@ class ZendDbCrudRepositoryAdapter implements CrudRepositoryAdapterInterface
             throw $ex;
         }
         catch (Exception $ex) {
-            throw new RuntimeException('Creating resource failed. See previous exception for more details', null, $ex);
+            throw new RuntimeException('Deleting resource failed. See previous exception for more details', null, $ex);
         }
     }
 
@@ -154,7 +155,7 @@ class ZendDbCrudRepositoryAdapter implements CrudRepositoryAdapterInterface
             $resource = $this->getResource($resourceType, $resourceData->getResourceId());
             $data = $resource->getData();
             
-            $mergedData = array_merge($data, $updateData);
+            $mergedData = ArrayUtils::merge($data, $updateData);
             
             $jsonDataStr = Json::encode($mergedData);
             
