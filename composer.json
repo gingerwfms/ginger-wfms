@@ -14,7 +14,7 @@
         "ginger",
         "wfms",
         "interface",
-	"workflow",
+        "workflow",
         "management"
     ],
     "require": {
@@ -30,6 +30,7 @@
     "autoload": {
         "psr-0": {
             "Ginger\\Core\\": "module",
+            "Ginger\\WorkflowConfiguration\\": "module",
             "Ginger\\Test\\" : "tests/PHPUnit"
         }
     }
