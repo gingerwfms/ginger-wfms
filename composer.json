@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "zendframework/zendframework": "2.0.5",
+        "zendframework/zendframework": "2.2.*",
         "crafics/cqrs-php" : "dev-master",
         "codeliner/zf2-cqrs-module" : "dev-master",
         "chrisboulton/php-resque": "1.2.x"
@@ -30,6 +30,7 @@
     "autoload": {
         "psr-0": {
             "Ginger\\Core\\": "module",
+            "Ginger\\Application\\": "module",
             "Ginger\\WorkflowConfiguration\\": "module",
             "Ginger\\Test\\" : "tests/PHPUnit"
         }
