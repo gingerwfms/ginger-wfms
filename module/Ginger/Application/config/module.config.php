@@ -22,6 +22,9 @@ return array(
         ),
     ),
     'service_manager' => array(
+        'factories' => array(
+            'ginger.application.main_navigation' => 'Ginger\Application\Navigation\MainNavigationFactory',
+        ),
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
@@ -61,5 +64,12 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
-    
+    'navigation' => array(
+        'main_navigation' => array(
+            'dashboard' => array(
+                'label' => 'Dashboard',
+                'route' => 'home'
+            )
+        )
+    ),
 );

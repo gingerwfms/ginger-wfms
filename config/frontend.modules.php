@@ -7,6 +7,7 @@
  * file that was distributed with this source code.
  */
 return array(    
+    'ZfcTwitterBootstrap',
     'Ginger\WorkflowConfiguration\Frontend',
     'Ginger\Application',
 );
