@@ -22,7 +22,8 @@
         "zendframework/zendframework": "2.2.*",
         "crafics/cqrs-php" : "dev-master",
         "codeliner/zf2-cqrs-module" : "dev-master",
-        "chrisboulton/php-resque": "1.2.x"
+        "chrisboulton/php-resque": "1.2.x",
+        "mwillbanks/zfc-twitter-bootstrap" : "dev-master"
     },
     "require-dev" : {
         "phpunit/phpunit": "3.7.*"
