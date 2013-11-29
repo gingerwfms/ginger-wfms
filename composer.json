@@ -23,7 +23,9 @@
         "crafics/cqrs-php" : "dev-master",
         "codeliner/zf2-cqrs-module" : "dev-master",
         "chrisboulton/php-resque": "1.2.x",
-        "mwillbanks/zfc-twitter-bootstrap" : "dev-master"
+        "mwillbanks/zfc-twitter-bootstrap" : "dev-master",
+        "rwoverdijk/assetmanager" : "1.*",
+        "leafo/lessphp" : "0.4.*"
     },
     "require-dev" : {
         "phpunit/phpunit": "3.7.*"
