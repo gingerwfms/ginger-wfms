@@ -8,6 +8,6 @@
  */
 return array(    
     'ZfcTwitterBootstrap',
-    'Ginger\WorkflowConfiguration\Frontend',
+    'WfConfigFrontend',
     'Ginger\Application',
 );
