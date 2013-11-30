@@ -8,6 +8,7 @@
  */
 return array(    
     'ZfcTwitterBootstrap',
+    'AssetManager',
     'WfConfigFrontend',
     'Ginger\Application',
 );

@@ -39,4 +39,25 @@ return array(
             )
         )
     ),
+    'asset_manager' => array(
+        'resolver_configs' => array(
+            'collections' => array(
+                'js/wf-config-app.js' => array(
+                    'js/backbone-1.1.0.js',
+                    'js/app.js'
+                ),
+            ),
+            'paths' => array(
+                __DIR__ . '/../public',
+            ),
+        ),        
+        'caching' => array(
+            'js/wf-config-app.js' => array(
+                'cache'     => 'FilePath',
+                'options' => array(
+                    'dir' => 'public', 
+                ),
+            ),
+        ),
+    ),
 );
