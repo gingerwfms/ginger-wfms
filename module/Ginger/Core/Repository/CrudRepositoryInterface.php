@@ -36,7 +36,7 @@ interface CrudRepositoryInterface
      * 
      * @param Resource\ResourceData $resourceData
      * 
-     * @return Resource\ResourceData Contains the new assigned ResourceId
+     * @return Resource\ResourceId
      * 
      * @throws \Ginger\Core\Exception\RuntimeException If create could not be performed
      */

@@ -9,7 +9,7 @@
 namespace WfConfigFrontend\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use WfConfigBackend\Facade\WorkflowFacade;
 /**
  * MVC Controller IndexController
  * 
@@ -17,10 +17,50 @@ use Zend\View\Model\ViewModel;
  */
 class IndexController extends AbstractActionController
 {
+    /**
+     *
+     * @var WorkflowFacade
+     */
+    protected $workflowFacade;
+
+    /**
+     * Display list of all workflows
+     * 
+     * @return array
+     */
     public function indexAction()
     {
-        $viewModel = new ViewModel();
-        $viewModel->setTemplate('workflow-configurator/index/index.phtml');
-        return new $viewModel;
+        $list = $this->getWorkflowFacade()->listAll();        
+        
+        return array('workflowList' => $list);
+    }
+    
+    /**
+     * Start workflow configurator for given workflow.
+     * 
+     * @return array
+     */
+    public function startAction()
+    {
+        $workflow = $this->getWorkflowFacade()
+            ->get($this->getEvent()
+            ->getRouteMatch()
+            ->getParam('id', ''));
+        
+        return array('workflow' => $workflow);
+    }
+    
+    /**
+     * Autoload and get worklow facade
+     * 
+     * @return WorkflowFacade
+     */
+    protected function getWorkflowFacade()
+    {
+        if (is_null($this->workflowFacade)) {
+            $this->workflowFacade = $this->getServiceLocator()->get('workflow_config_facade');
+        }
+        
+        return $this->workflowFacade;
     }
 }
