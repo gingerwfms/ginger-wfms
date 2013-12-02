@@ -99,7 +99,7 @@ class AbstractCrudRepository implements CrudRepositoryInterface
      * 
      * @param array $filter Simple Key/Value criteria mapping
      * 
-     * @return ResourceData[]
+     * @return Resource\ResourceData[]
      */
     public function listAll()
     {

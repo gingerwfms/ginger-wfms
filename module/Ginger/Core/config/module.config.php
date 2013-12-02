@@ -7,26 +7,5 @@
  * file that was distributed with this source code.
  */
 return array(
-    'cqrs' => array(
-        'default_bus' => \Ginger\Core\Definition::SYNC_BUS,
-        'adapters' => array(
-            'Cqrs\Adapter\ArrayMapAdapter' => array(
-                'buses' => array(
-                    'Ginger\Core\Cqrs\Bus\CoreSyncBus' => array(
-                        
-                    ),
-                    'Ginger\Core\Cqrs\Bus\AsyncPhpResqueCommandBus' => array(
-                        //do not map commands here, use the Ginger\Core\Cqrs\Bus\CoreSyncBus
-                        //to register command handlers
-                        //the async bus works as a proxy to handle commands in background threads
-                    ),
-                    'Ginger\Core\Cqrs\Bus\AsyncPhpResqueEventBus' => array(
-                        //do not map events here, use the Ginger\Core\Cqrs\Bus\CoreSyncBus
-                        //to register event listeners
-                        //the async bus works as a proxy to handle events in background threads
-                    )
-                )
-            )
-        )
-    )
+    
 );

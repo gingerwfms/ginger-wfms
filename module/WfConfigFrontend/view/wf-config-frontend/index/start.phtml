@@ -1,0 +1,16 @@
+<?php 
+if (is_null($this->workflow)): 
+?>
+<div class="jumbotron danger">
+    <?php echo $this->translate('Workflow could not be found!') ?>
+</div>
+<?php 
+else:
+    $this->headScript()->prependFile($this->basePath() . '/js/wf-config-app.js');
+    $this->headScript()->captureStart();
+    ?>
+        var WorkflowData = <?php echo $this->json($this->workflow->getArrayCopy()) ?>;
+    <?php
+    $this->headScript()->captureEnd();
+endif; 
+?>
