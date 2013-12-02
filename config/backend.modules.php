@@ -7,5 +7,5 @@
  * file that was distributed with this source code.
  */
 return array(
-    'Ginger\WorkflowConfiguration\Backend'
+    'WfConfigBackend'
 );
