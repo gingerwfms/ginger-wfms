@@ -8,7 +8,7 @@
  */
 namespace Ginger\Core\Cqrs\Bus;
 
-use Cqrs\Bus\AbstractBus;
+use Malocher\Cqrs\Bus\AbstractBus;
 use Ginger\Core\Definition;
 /**
  * Ginger Core CQRS CoreSyncBus

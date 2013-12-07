@@ -18,7 +18,7 @@ class AsyncPhpResqueEventBusTest extends \PHPUnit_Framework_TestCase
     {
         $this->serviceManager = \Ginger\Core\Bootstrap::getServiceManager();
         
-        $gate = $this->serviceManager->get('cqrs.gate');
+        $gate = $this->serviceManager->get('malocher.cqrs.gate');
         
         $asyncBus = $gate->getBus(\Ginger\Core\Definition::ASYNC_EVENT_BUS);
         
@@ -49,7 +49,7 @@ class AsyncPhpResqueEventBusTest extends \PHPUnit_Framework_TestCase
 
         $eventListener = new EventListener();
         
-        $this->serviceManager->get('cqrs.gate')
+        $this->serviceManager->get('malocher.cqrs.gate')
             ->getBus(\Ginger\Core\Definition::ASYNC_EVENT_BUS)
             ->publishEvent($event);
         

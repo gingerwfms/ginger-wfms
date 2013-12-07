@@ -10,8 +10,8 @@ namespace Ginger\Core\Cqrs\Bus;
 
 use Ginger\Core\Definition;
 use Ginger\Core\Exception;
-use Cqrs\Bus\BusInterface;
-use Cqrs\Gate;
+use Malocher\Cqrs\Bus\BusInterface;
+use Malocher\Cqrs\Gate;
 /**
  * AbstractAsyncCommandBus
  * 
@@ -19,7 +19,7 @@ use Cqrs\Gate;
  * The bus should send each command to the Ginger\Core\Definition::ASYNC_COMMAND_QUEUE and
  * register itself as the handler of the command. 
  * In the handle/perform/proccess method, the bus should bootstrap the ginger core, take the
- * "cqrs.gate" and send the command to the Ginger\Core\Definition::SYNC_BUS.
+ * "malocher.cqrs.gate" and send the command to the Ginger\Core\Definition::SYNC_BUS.
  * The sync-bus knows the responsible command handler and invoke it immediately.
  * 
  * @author Alexander Miertsch <kontakt@codeliner.ws>
@@ -75,7 +75,7 @@ abstract class AbstractAsyncCommandBus implements BusInterface
         );
     }
     
-    public function executeQuery(\Cqrs\Query\QueryInterface $query)
+    public function executeQuery(\Malocher\Cqrs\Query\QueryInterface $query)
     {
         throw new Exception\BadMethodCallException('ExecuteQuery is not implemented by the async-command-bus');
     }
@@ -95,7 +95,7 @@ abstract class AbstractAsyncCommandBus implements BusInterface
         throw new Exception\BadMethodCallException('mapQuery is not implemented by the async-command-bus');
     }
 
-    public function publishEvent(\Cqrs\Event\EventInterface $event)
+    public function publishEvent(\Malocher\Cqrs\Event\EventInterface $event)
     {
         throw new Exception\BadMethodCallException('publishEvent is not implemented by the async-command-bus');
     }

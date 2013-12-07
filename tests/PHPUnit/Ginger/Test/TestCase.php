@@ -10,6 +10,7 @@ namespace Ginger\Test;
 
 use PHPUnit_Framework_TestCase;
 use Zend\Db\Adapter\Adapter;
+use Ginger\Core\Repository\Adapter\ZendDbCrudRepositoryAdapter;
 /**
  *  TestCase
  * 
@@ -36,5 +37,10 @@ class TestCase extends PHPUnit_Framework_TestCase
         )->execute();
         
         return $adapter;
+    }
+    
+    protected function getCrudAdapter()
+    {
+        return new ZendDbCrudRepositoryAdapter($this->initCrudDatabase());
     }
 }

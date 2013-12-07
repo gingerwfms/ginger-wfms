@@ -15,7 +15,7 @@ namespace Ginger\Test\Mock\Core;
  */
 class CommandHandler
 {
-    use \Cqrs\Adapter\AdapterTrait;
+    use \Malocher\Cqrs\Adapter\AdapterTrait;
     
     public function checkCommandInvocation(CheckCommandInvocationCommand $command) {
         $checkPayload = array('check args');
@@ -36,6 +36,6 @@ class CommandHandler
     
     static public function reset()
     {
-        file_put_contents('tests/PHPUnit/Ginger/Test/Mock/Core/touch-file.txt', 'touch it');
+        file_put_contents('tests/PHPUnit/Ginger/Test/Mock/Core/touch-file.txt', 'remove me');
     }
 }

@@ -15,7 +15,7 @@ return array(
     ),
     'cqrs' => array(
         'adapters' => array(
-            'Cqrs\Adapter\ArrayMapAdapter' => array(
+            'Malocher\Cqrs\Adapter\ArrayMapAdapter' => array(
                 'buses' => array(
                     'Ginger\Core\Cqrs\Bus\CoreSyncBus' => array(
                         'Ginger\Test\Mock\Core\CheckCommandInvocationCommand' => array(

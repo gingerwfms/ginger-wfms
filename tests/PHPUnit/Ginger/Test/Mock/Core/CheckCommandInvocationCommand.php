@@ -8,8 +8,8 @@
  */
 namespace Ginger\Test\Mock\Core;
 
-use Cqrs\Command\CommandInterface;
-use Cqrs\Message\Message;
+use Malocher\Cqrs\Command\CommandInterface;
+use Malocher\Cqrs\Message\Message;
 /**
  *  CheckCommandInvocationCommand
  * 

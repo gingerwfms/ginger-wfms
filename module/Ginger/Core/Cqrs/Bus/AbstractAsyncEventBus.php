@@ -10,8 +10,8 @@ namespace Ginger\Core\Cqrs\Bus;
 
 use Ginger\Core\Definition;
 use Ginger\Core\Exception;
-use Cqrs\Bus\BusInterface;
-use Cqrs\Gate;
+use Malocher\Cqrs\Bus\BusInterface;
+use Malocher\Cqrs\Gate;
 /**
  * AbstractAsyncEventBus
  * 
@@ -19,7 +19,7 @@ use Cqrs\Gate;
  * The bus should send each event to the Ginger\Core\Definition::ASYNC_EVENT_QUEUE and
  * register itself as the listener of the event. 
  * In the handle/perform/proccess method, the bus should bootstrap the ginger core, take the
- * "cqrs.gate" and publish the event to the Ginger\Core\Definition::SYNC_BUS.
+ * "malocher.cqrs.gate" and publish the event to the Ginger\Core\Definition::SYNC_BUS.
  * The sync-bus knows the responsible event listener and invoke it immediately.
  * 
  * @author Alexander Miertsch <kontakt@codeliner.ws>
@@ -69,7 +69,7 @@ abstract class AbstractAsyncEventBus implements BusInterface
         throw new Exception\BadMethodCallException('mapCommand is not implemented by the async-event-bus');
     }
     
-    public function invokeCommand(\Cqrs\Command\CommandInterface $command)
+    public function invokeCommand(\Malocher\Cqrs\Command\CommandInterface $command)
     {
         throw new Exception\BadMethodCallException('invokeCommand is not implemented by the async-event-bus');
     }
@@ -84,7 +84,7 @@ abstract class AbstractAsyncEventBus implements BusInterface
         throw new Exception\BadMethodCallException('mapQuery is not implemented by the async-event-bus');
     }
     
-    public function executeQuery(\Cqrs\Query\QueryInterface $query)
+    public function executeQuery(\Malocher\Cqrs\Query\QueryInterface $query)
     {
         throw new Exception\BadMethodCallException('ExecuteQuery is not implemented by the async-event-bus');
     }
