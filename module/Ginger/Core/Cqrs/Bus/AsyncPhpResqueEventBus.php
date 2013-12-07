@@ -8,7 +8,7 @@
  */
 namespace Ginger\Core\Cqrs\Bus;
 
-use Cqrs\Event\EventInterface;
+use Malocher\Cqrs\Event\EventInterface;
 use Ginger\Core\Definition;
 /**
  * Special async CQRS EventBus with a link to Php_Resque
@@ -47,7 +47,7 @@ class AsyncPhpResqueEventBus extends AbstractAsyncEventBus
         $event = new $eventClass($payload, $id, $timestamp, $version);
         
         \Ginger\Core\Bootstrap::getServiceManager()
-            ->get('cqrs.gate')
+            ->get('malocher.cqrs.gate')
             ->getBus(Definition::SYNC_BUS)
             ->publishEvent($event);
     }

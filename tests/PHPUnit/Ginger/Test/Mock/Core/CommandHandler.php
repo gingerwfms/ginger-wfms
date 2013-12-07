@@ -15,7 +15,7 @@ namespace Ginger\Test\Mock\Core;
  */
 class CommandHandler
 {
-    use \Cqrs\Adapter\AdapterTrait;
+    use \Malocher\Cqrs\Adapter\AdapterTrait;
     
     public function checkCommandInvocation(CheckCommandInvocationCommand $command) {
         $checkPayload = array('check args');

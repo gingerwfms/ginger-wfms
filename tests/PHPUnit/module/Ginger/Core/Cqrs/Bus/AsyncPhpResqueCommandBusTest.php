@@ -22,7 +22,7 @@ class AsyncPhpResqueCommandBusTest extends \PHPUnit_Framework_TestCase
     {
         $this->serviceManager = \Ginger\Core\Bootstrap::getServiceManager();
         
-        $gate = $this->serviceManager->get('cqrs.gate');
+        $gate = $this->serviceManager->get('malocher.cqrs.gate');
         
         $asyncBus = $gate->getBus(\Ginger\Core\Definition::ASYNC_COMMAND_BUS);
         
@@ -53,7 +53,7 @@ class AsyncPhpResqueCommandBusTest extends \PHPUnit_Framework_TestCase
 
         $commandHandler = new CommandHandler();
         
-        $this->serviceManager->get('cqrs.gate')
+        $this->serviceManager->get('malocher.cqrs.gate')
             ->getBus(\Ginger\Core\Definition::ASYNC_COMMAND_BUS)
             ->invokeCommand($command);
         

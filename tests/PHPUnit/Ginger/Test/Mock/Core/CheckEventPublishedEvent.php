@@ -8,8 +8,8 @@
  */
 namespace Ginger\Test\Mock\Core;
 
-use Cqrs\Event\EventInterface;
-use Cqrs\Message\Message;
+use Malocher\Cqrs\Event\EventInterface;
+use Malocher\Cqrs\Message\Message;
 /**
  * Event CheckEventPublishedEvent
  * 

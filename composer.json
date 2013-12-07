@@ -1,5 +1,5 @@
 {
-    "name": "codeliner/ginger-wfms",
+    "name": "gingerwfms/ginger-wfms",
     "description": "Flexible web based Workflow-Management-System",
     "license": "BSD-3-Clause",    
     "homepage": "http://www.codeliner.ws/",
@@ -20,8 +20,8 @@
     "require": {
         "php": ">=5.4.0",
         "zendframework/zendframework": "2.2.*",
-        "crafics/cqrs-php" : "dev-master",
-        "codeliner/zf2-cqrs-module" : "dev-master",
+        "malocher/cqrs-esb" : "dev-master",
+        "malocher/zf2-cqrs-module" : "dev-master",
         "chrisboulton/php-resque": "1.2.x",
         "mwillbanks/zfc-twitter-bootstrap" : "dev-master",
         "rwoverdijk/assetmanager" : "1.*",

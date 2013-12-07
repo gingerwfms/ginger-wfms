@@ -8,7 +8,7 @@
  */
 namespace Ginger\Core\Cqrs\Bus;
 
-use Cqrs\Command\CommandInterface;
+use Malocher\Cqrs\Command\CommandInterface;
 use Ginger\Core\Definition;
 /**
  * Special async CQRS CommandBus with a link to Php_Resque
@@ -47,7 +47,7 @@ class AsyncPhpResqueCommandBus extends AbstractAsyncCommandBus
         $command = new $commandClass($payload, $id, $timestamp, $version);
         
         \Ginger\Core\Bootstrap::getServiceManager()
-            ->get('cqrs.gate')
+            ->get('malocher.cqrs.gate')
             ->getBus(Definition::SYNC_BUS)
             ->invokeCommand($command);
     }

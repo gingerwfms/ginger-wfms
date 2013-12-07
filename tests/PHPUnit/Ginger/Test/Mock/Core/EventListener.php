@@ -15,7 +15,7 @@ namespace Ginger\Test\Mock\Core;
  */
 class EventListener 
 {
-    use \Cqrs\Adapter\AdapterTrait;
+    use \Malocher\Cqrs\Adapter\AdapterTrait;
     
     public function onCheckEventPublished(CheckEventPublishedEvent $event) {
         $checkPayload = array('check event args');

@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "c1bafde1000ce23662b9450aa961f1e4",
+    "hash": "bba2451fd38496f9189366408e9a666d",
     "packages": [
         {
             "name": "chrisboulton/php-resque",
@@ -47,101 +47,6 @@
                 "resque"
             ],
             "time": "2012-10-13 07:28:16"
-        },
-        {
-            "name": "codeliner/zf2-cqrs-module",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/codeliner/zf2-cqrs-module.git",
-                "reference": "c4fbcbbaabc1f590627fc7ed3c40ad88d5140db0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/codeliner/zf2-cqrs-module/zipball/c4fbcbbaabc1f590627fc7ed3c40ad88d5140db0",
-                "reference": "c4fbcbbaabc1f590627fc7ed3c40ad88d5140db0",
-                "shasum": ""
-            },
-            "require": {
-                "crafics/cqrs-php": "dev-master",
-                "php": ">=5.4.0",
-                "zendframework/zendframework": "2.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "CqrsModule\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Alexander Miertsch",
-                    "email": "kontakt@codeliner.ws",
-                    "homepage": "http://www.codeliner.ws/"
-                }
-            ],
-            "description": "PHP CQRS integration for Zend Framework 2",
-            "homepage": "http://www.codeliner.ws/",
-            "keywords": [
-                "cqrs",
-                "framework",
-                "zf2"
-            ],
-            "time": "2013-11-20 19:14:00"
-        },
-        {
-            "name": "crafics/cqrs-php",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/crafics/cqrs-php.git",
-                "reference": "2efe4463bebf0d13104a895f5e7d60613bddd7d4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/crafics/cqrs-php/zipball/2efe4463bebf0d13104a895f5e7d60613bddd7d4",
-                "reference": "2efe4463bebf0d13104a895f5e7d60613bddd7d4",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Test\\": "tests/",
-                    "Iteration\\": "iterations/",
-                    "Cqrs\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Alexander Miertsch",
-                    "email": "kontakt@codeliner.ws",
-                    "homepage": "http://www.codeliner.ws/"
-                },
-                {
-                    "name": "Manfred Weber",
-                    "email": "crafics@php.net",
-                    "homepage": "http://dschini.org/"
-                }
-            ],
-            "description": "PHP CQRS Framework",
-            "homepage": "https://github.com/crafics/cqrs-php/",
-            "keywords": [
-                "cqrs",
-                "framework",
-                "php"
-            ],
-            "time": "2013-11-20 19:06:36"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -256,6 +161,112 @@
             "time": "2013-08-09 17:09:19"
         },
         {
+            "name": "malocher/cqrs-esb",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/malocher/cqrs-esb.git",
+                "reference": "fc2e77c91a8df591232c301e480f85f98fa7f079"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/malocher/cqrs-esb/zipball/fc2e77c91a8df591232c301e480f85f98fa7f079",
+                "reference": "fc2e77c91a8df591232c301e480f85f98fa7f079",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Malocher\\Test\\": "tests/",
+                    "Iteration\\": "iterations/",
+                    "Malocher\\Cqrs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Miertsch",
+                    "email": "kontakt@codeliner.ws",
+                    "homepage": "http://www.codeliner.ws/"
+                },
+                {
+                    "name": "Manfred Weber",
+                    "email": "crafics@php.net",
+                    "homepage": "http://dschini.org/"
+                }
+            ],
+            "description": "PHP CQRS ESB Framework",
+            "homepage": "https://github.com/malocher/cqrs-esb/",
+            "keywords": [
+                "cqrs",
+                "esb",
+                "framework",
+                "php"
+            ],
+            "time": "2013-12-05 17:00:37"
+        },
+        {
+            "name": "malocher/zf2-cqrs-module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/malocher/zf2-cqrs-module.git",
+                "reference": "ad87550afdfe797b94a8ae404f2a0ebc8afb1965"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/malocher/zf2-cqrs-module/zipball/ad87550afdfe797b94a8ae404f2a0ebc8afb1965",
+                "reference": "ad87550afdfe797b94a8ae404f2a0ebc8afb1965",
+                "shasum": ""
+            },
+            "require": {
+                "malocher/cqrs-esb": "dev-master",
+                "php": ">=5.4.0",
+                "zendframework/zendframework": "2.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MalocherCqrsModule\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Miertsch",
+                    "email": "kontakt@codeliner.ws",
+                    "homepage": "http://www.codeliner.ws/"
+                },
+                {
+                    "name": "Manfred Weber",
+                    "email": "crafics@php.net",
+                    "homepage": "http://dschini.org/"
+                }
+            ],
+            "description": "PHP CQRS + Service Bus integration for Zend Framework 2",
+            "homepage": "https://github.com/malocher/zf2-cqrs-module",
+            "keywords": [
+                "cqrs",
+                "esb",
+                "framework",
+                "zf2"
+            ],
+            "time": "2013-12-07 18:15:04"
+        },
+        {
             "name": "mwillbanks/zfc-twitter-bootstrap",
             "version": "dev-master",
             "source": {
@@ -308,22 +319,33 @@
         },
         {
             "name": "rwoverdijk/assetmanager",
-            "version": "1.3.4",
+            "version": "1.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RWOverdijk/AssetManager.git",
-                "reference": "dc7926c7414f707937ec010a89b6dca37aa3a854"
+                "reference": "ef5965c763dd0261d8516d6f9ab011c2fcc3e902"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RWOverdijk/AssetManager/zipball/dc7926c7414f707937ec010a89b6dca37aa3a854",
-                "reference": "dc7926c7414f707937ec010a89b6dca37aa3a854",
+                "url": "https://api.github.com/repos/RWOverdijk/AssetManager/zipball/ef5965c763dd0261d8516d6f9ab011c2fcc3e902",
+                "reference": "ef5965c763dd0261d8516d6f9ab011c2fcc3e902",
                 "shasum": ""
             },
             "require": {
                 "kriswallsmith/assetic": "1.1.*",
                 "php": ">=5.3.3",
-                "zendframework/zendframework": "2.*"
+                "zendframework/zend-config": "2.*",
+                "zendframework/zend-console": "2.*",
+                "zendframework/zend-eventmanager": "2.*",
+                "zendframework/zend-form": "2.*",
+                "zendframework/zend-http": "2.*",
+                "zendframework/zend-loader": "2.*",
+                "zendframework/zend-modulemanager": "2.*",
+                "zendframework/zend-mvc": "2.*",
+                "zendframework/zend-serializer": "2.*",
+                "zendframework/zend-servicemanager": "2.*",
+                "zendframework/zend-stdlib": "2.*",
+                "zendframework/zend-view": "2.*"
             },
             "type": "library",
             "autoload": {
@@ -356,21 +378,21 @@
                 "zend framework 2",
                 "zf2"
             ],
-            "time": "2013-09-05 10:27:10"
+            "time": "2013-12-05 22:17:38"
         },
         {
             "name": "symfony/process",
-            "version": "v2.3.7",
+            "version": "v2.4.0",
             "target-dir": "Symfony/Component/Process",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "82898108f79040314a7b3ba430a72c32c7f61d14"
+                "reference": "87738ff42e2467730ed74d941866e95513844b70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/82898108f79040314a7b3ba430a72c32c7f61d14",
-                "reference": "82898108f79040314a7b3ba430a72c32c7f61d14",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/87738ff42e2467730ed74d941866e95513844b70",
+                "reference": "87738ff42e2467730ed74d941866e95513844b70",
                 "shasum": ""
             },
             "require": {
@@ -379,7 +401,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -403,7 +425,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-10-30 08:30:20"
+            "time": "2013-11-26 16:40:27"
         },
         {
             "name": "zendframework/zendframework",
@@ -891,17 +913,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.3.7",
+            "version": "v2.4.0",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "c1bda5b459d792cb253de12c65beba3040163b2b"
+                "reference": "1ae235a1b9d3ad3d9f3860ff20acc072df95b7f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/c1bda5b459d792cb253de12c65beba3040163b2b",
-                "reference": "c1bda5b459d792cb253de12c65beba3040163b2b",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/1ae235a1b9d3ad3d9f3860ff20acc072df95b7f5",
+                "reference": "1ae235a1b9d3ad3d9f3860ff20acc072df95b7f5",
                 "shasum": ""
             },
             "require": {
@@ -910,7 +932,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -934,7 +956,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-10-17 11:48:01"
+            "time": "2013-11-26 16:40:27"
         }
     ],
     "aliases": [
@@ -942,8 +964,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "crafics/cqrs-php": 20,
-        "codeliner/zf2-cqrs-module": 20,
+        "malocher/cqrs-esb": 20,
+        "malocher/zf2-cqrs-module": 20,
         "mwillbanks/zfc-twitter-bootstrap": 20
     },
     "platform": {

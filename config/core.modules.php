@@ -8,5 +8,5 @@
  */
 return array(
     'Ginger\Core',
-    'CqrsModule'
+    'MalocherCqrsModule'
 );
