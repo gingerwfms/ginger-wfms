@@ -11,6 +11,7 @@ return array(
             './module',
             './module/Ginger',
             './vendor',
+            './plugin',
         ),
     ),
 );
