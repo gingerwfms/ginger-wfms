@@ -34,7 +34,6 @@
         "psr-0": {
             "Ginger\\Core\\": "module",
             "Ginger\\Application\\": "module",
-            "Ginger\\WorkflowConfiguration\\": "module",
             "Ginger\\Test\\" : "tests/PHPUnit"
         }
     },
