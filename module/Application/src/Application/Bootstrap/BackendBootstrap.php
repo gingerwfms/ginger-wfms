@@ -19,7 +19,7 @@ class BackendBootstrap
 {
     protected static $serviceManager;
 
-    public static function init($activateTestEnv = false)
+    public static function init()
     {
         include 'init_autoloader.php';
         
@@ -29,15 +29,7 @@ class BackendBootstrap
         $coreModules = include 'config/core.modules.php';
         $backendModules = include 'config/backend.modules.php';
         
-        $modules = array_merge($coreModules, $backendModules);
-        
-        if ($activateTestEnv) {
-            $config['module_listener_options']['module_paths'][] = './tests/PHPUnit/Ginger';
-            
-            $modules[] = 'Ginger\Test';
-        }
-        
-        $config['modules'] = $modules;
+        $config['modules'] = array_merge($coreModules, $backendModules);
 
         $serviceManager = new ServiceManager(new ServiceManagerConfig());
         $serviceManager->setService('ApplicationConfig', $config);
