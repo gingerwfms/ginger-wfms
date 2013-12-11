@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "bba2451fd38496f9189366408e9a666d",
+    "hash": "960ba167526736809a87661f64e5dcc4",
     "packages": [
         {
             "name": "chrisboulton/php-resque",
@@ -162,7 +162,7 @@
         },
         {
             "name": "malocher/cqrs-esb",
-            "version": "dev-master",
+            "version": "1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/malocher/cqrs-esb.git",
@@ -214,20 +214,20 @@
         },
         {
             "name": "malocher/zf2-cqrs-module",
-            "version": "dev-master",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/malocher/zf2-cqrs-module.git",
-                "reference": "ad87550afdfe797b94a8ae404f2a0ebc8afb1965"
+                "reference": "90d74eda2145e23375c0489c9d7a0372e7656b9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/malocher/zf2-cqrs-module/zipball/ad87550afdfe797b94a8ae404f2a0ebc8afb1965",
-                "reference": "ad87550afdfe797b94a8ae404f2a0ebc8afb1965",
+                "url": "https://api.github.com/repos/malocher/zf2-cqrs-module/zipball/90d74eda2145e23375c0489c9d7a0372e7656b9a",
+                "reference": "90d74eda2145e23375c0489c9d7a0372e7656b9a",
                 "shasum": ""
             },
             "require": {
-                "malocher/cqrs-esb": "dev-master",
+                "malocher/cqrs-esb": "1.0.*",
                 "php": ">=5.4.0",
                 "zendframework/zendframework": "2.*"
             },
@@ -264,7 +264,7 @@
                 "framework",
                 "zf2"
             ],
-            "time": "2013-12-07 18:15:04"
+            "time": "2013-12-10 18:44:59"
         },
         {
             "name": "mwillbanks/zfc-twitter-bootstrap",
@@ -964,8 +964,6 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "malocher/cqrs-esb": 20,
-        "malocher/zf2-cqrs-module": 20,
         "mwillbanks/zfc-twitter-bootstrap": 20
     },
     "platform": {

@@ -20,8 +20,8 @@
     "require": {
         "php": ">=5.4.0",
         "zendframework/zendframework": "2.2.*",
-        "malocher/cqrs-esb" : "dev-master",
-        "malocher/zf2-cqrs-module" : "dev-master",
+        "malocher/cqrs-esb" : "1.*",
+        "malocher/zf2-cqrs-module" : "1.*",
         "chrisboulton/php-resque": "1.2.x",
         "mwillbanks/zfc-twitter-bootstrap" : "dev-master",
         "rwoverdijk/assetmanager" : "1.*",
@@ -34,8 +34,10 @@
         "psr-0": {
             "Ginger\\Core\\": "module",
             "Ginger\\Application\\": "module",
-            "Ginger\\WorkflowConfiguration\\": "module",
             "Ginger\\Test\\" : "tests/PHPUnit"
         }
+    },
+    "extra": {
+        "plugin-installer-bootstrap": "Ginger\\Core\\Bootstrap"
     }
 }
