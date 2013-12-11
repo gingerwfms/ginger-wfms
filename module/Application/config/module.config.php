@@ -14,7 +14,7 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Ginger\Application\Controller\Index',
+                        'controller' => 'Application\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -23,7 +23,7 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'ginger.application.main_navigation' => 'Ginger\Application\Navigation\MainNavigationFactory',
+            'ginger.application.main_navigation' => 'Application\Navigation\MainNavigationFactory',
         ),
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
@@ -45,7 +45,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Ginger\Application\Controller\Index' => 'Ginger\Application\Controller\IndexController',
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
         ),
     ),
     'view_manager' => array(

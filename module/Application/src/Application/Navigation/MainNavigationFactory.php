@@ -6,14 +6,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Ginger\Core\Exception;
+namespace Application\Navigation;
 
+use Zend\Navigation\Service\AbstractNavigationFactory;
 /**
- * Marker Interface CoreException
+ *  MainNavigationFactory
  * 
  * @author Alexander Miertsch <kontakt@codeliner.ws>
  */
-interface CoreException
+class MainNavigationFactory extends AbstractNavigationFactory
 {
-    
+    protected function getName()
+    {
+        return 'main_navigation';
+    }
+
 }

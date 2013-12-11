@@ -6,13 +6,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Ginger\Core\Exception;
 
-/**
- * Exception BadMethodCallException
- * 
- * @author Alexander Miertsch <kontakt@codeliner.ws>
- */
-class BadMethodCallException extends \BadMethodCallException implements CoreException
+namespace Application\Controller;
+
+use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
+
+class IndexController extends AbstractActionController
 {
+    public function indexAction()
+    {
+        return new ViewModel();
+    }
 }

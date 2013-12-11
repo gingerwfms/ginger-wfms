@@ -6,10 +6,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Ginger\Core;
+namespace Application;
 
 /**
- * Module class for Ginger\Core
+ * Module class for Application
  * 
  * @author Alexander Miertsch <kontakt@codeliner.ws>
  */
@@ -22,7 +22,12 @@ class Module
 
     public function getAutoloaderConfig()
     {
-        //autoloading is defined in the composer.json file
-        return array();
+        return array(
+            'Zend\Loader\StandardAutoloader' => array(
+                'namespaces' => array(
+                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+                ),
+            ),
+        );
     }
 }
