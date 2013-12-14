@@ -35,6 +35,7 @@ class PluginHandlerTest extends TestCase
         );
         
         $this->moduleIncludeManager->removeBackendModule('BackendTest');
+        $this->moduleIncludeManager->removeFrontendModule('FrontendTest');
         
         BackendBootstrap::setModuleIncludeManager($this->moduleIncludeManager);
         
@@ -51,7 +52,7 @@ class PluginHandlerTest extends TestCase
         @unlink(__DIR__ . '/../config/' . 'frontend.modules.php');
     }
     
-    public function testOnPluginInstalled()
+    public function testOnPluginInstalled_backendModule()
     {
         $pluginInstalledEvent = new Cqrs\PluginInstalledEvent(array(
             'plugin_namespace' => 'WfConfiguratorBackend',
@@ -72,5 +73,28 @@ class PluginHandlerTest extends TestCase
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getBackendModulesList());
+    }
+    
+    public function testOnPluginInstalled_frontendModule()
+    {
+        $pluginInstalledEvent = new Cqrs\PluginInstalledEvent(array(
+            'plugin_namespace' => 'WfConfiguratorFrontend',
+            'plugin_name' => 'gingerwfms/wf-configurator-frontend',
+            'plugin_type' => 'ginger-frontend-plugin',
+            'version' => '1.0.0'
+        ));        
+        
+        BackendBootstrap::getServiceManager()
+            ->get('malocher.cqrs.gate')
+            ->getBus()
+            ->publishEvent($pluginInstalledEvent);
+        
+        $check = array(
+            'GingerCore',
+            'MalocherCqrsModule',
+            'WfConfiguratorFrontend'
+        );
+        
+        $this->assertEquals($check, $this->moduleIncludeManager->getAllModulesList());
     }
 }
