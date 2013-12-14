@@ -25,6 +25,8 @@ class ModuleIncludeManagerTest extends TestCase
 
     protected function setUp()
     {
+        parent::setUp();
+        
         $this->moduleIncludeManager = new ModuleIncludeManager(
             __DIR__ . '/../config'
         );
@@ -41,6 +43,7 @@ class ModuleIncludeManagerTest extends TestCase
     {
         $check = array(
             'GingerCore',
+            'MalocherCqrsModule',
             'BackendTest'
         );
         
@@ -51,6 +54,7 @@ class ModuleIncludeManagerTest extends TestCase
     {
         $check = array(
             'GingerCore',
+            'MalocherCqrsModule',
             'BackendTest',
             'FrontendTest'
         );
@@ -64,6 +68,7 @@ class ModuleIncludeManagerTest extends TestCase
         
         $check = array(
             'GingerCore',
+            'MalocherCqrsModule',
             'BackendTest',
             'MyBackendModule',
         );
@@ -77,6 +82,7 @@ class ModuleIncludeManagerTest extends TestCase
         
         $check = array(
             'GingerCore',
+            'MalocherCqrsModule',
             'BackendTest',
             'FrontendTest',
             'MyFrontendModule'
@@ -92,6 +98,7 @@ class ModuleIncludeManagerTest extends TestCase
         
         $check = array(
             'GingerCore',
+            'MalocherCqrsModule',
             'BackendTest',
         );
         
@@ -101,6 +108,7 @@ class ModuleIncludeManagerTest extends TestCase
         
         $check = array(
             'GingerCore',
+            'MalocherCqrsModule',
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getBackendModulesList());                
@@ -114,6 +122,7 @@ class ModuleIncludeManagerTest extends TestCase
         
         $check = array(
             'GingerCore',
+            'MalocherCqrsModule',
             'BackendTest',
             'FrontendTest',
         );
@@ -124,6 +133,7 @@ class ModuleIncludeManagerTest extends TestCase
         
         $check = array(
             'GingerCore',
+            'MalocherCqrsModule',
             'BackendTest',
         );
         
