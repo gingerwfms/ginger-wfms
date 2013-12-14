@@ -39,6 +39,10 @@ class BackendBootstrap
 
     public static function getServiceManager()
     {
+        if (is_null(static::$serviceManager)) {
+            static::init();
+        }
+        
         return static::$serviceManager;
     }
     
@@ -67,6 +71,7 @@ class BackendBootstrap
     public static function reset()
     {
         static::$serviceManager = null;
+        static::$moduleIncludeManager = null;
         
     }
 }

@@ -20,11 +20,11 @@ class BackendBootstrapTest extends TestCase
 {
     protected function setUp()
     {
+        parent::setUp();
+        
         $moduleIncludeManager = new ModuleIncludeManager(
             __DIR__ . '/../config'
         );
-        
-        chdir(realpath(__DIR__ . '/../../../../..'));
         
         $moduleIncludeManager->removeBackendModule('BackendTest');
         $moduleIncludeManager->removeFrontendModule('FrontendTest');
