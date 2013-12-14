@@ -10,6 +10,7 @@ namespace Application\Bootstrap;
 
 use Zend\Mvc\Service\ServiceManagerConfig;
 use Zend\ServiceManager\ServiceManager;
+use Application\ModuleInclusion\ModuleIncludeManager;
 /**
  *  Bootstrap
  * 
@@ -18,19 +19,17 @@ use Zend\ServiceManager\ServiceManager;
 class BackendBootstrap
 {
     protected static $serviceManager;
+    
+    protected static $moduleIncludeManager;
 
     public static function init()
     {
-        include 'init_autoloader.php';
+        include_once 'init_autoloader.php';
         
         // use ModuleManager to load core and backend modules
         $config = include 'config/application.config.php';
         
-        //$coreModules = include 'config/core.modules.php';
-        $coreModules = array();
-        $backendModules = include 'config/backend.modules.php.dist';
-        
-        $config['modules'] = array_merge($coreModules, $backendModules);
+        $config['modules'] = static::getModuleIncludeManager()->getBackendModulesList();
 
         $serviceManager = new ServiceManager(new ServiceManagerConfig());
         $serviceManager->setService('ApplicationConfig', $config);
@@ -41,5 +40,33 @@ class BackendBootstrap
     public static function getServiceManager()
     {
         return static::$serviceManager;
+    }
+    
+    /**
+     * 
+     * @return ModuleIncludeManager
+     */
+    public static function getModuleIncludeManager()
+    {
+        if (is_null(static::$moduleIncludeManager)) {
+            static::$moduleIncludeManager = new ModuleIncludeManager();
+        }
+        
+        return static::$moduleIncludeManager;
+    }
+    
+    /**
+     * 
+     * @param ModuleIncludeManager $manager
+     */
+    public static function setModuleIncludeManager(ModuleIncludeManager $manager)
+    {
+        static::$moduleIncludeManager = $manager;
+    }
+    
+    public static function reset()
+    {
+        static::$serviceManager = null;
+        
     }
 }

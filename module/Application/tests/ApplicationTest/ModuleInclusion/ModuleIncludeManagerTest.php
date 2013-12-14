@@ -40,7 +40,7 @@ class ModuleIncludeManagerTest extends TestCase
     public function testGetBackendModulesList()
     {
         $check = array(
-            'CoreTest',
+            'GingerCore',
             'BackendTest'
         );
         
@@ -50,7 +50,7 @@ class ModuleIncludeManagerTest extends TestCase
     public function testGetAllModulesList()
     {
         $check = array(
-            'CoreTest',
+            'GingerCore',
             'BackendTest',
             'FrontendTest'
         );
@@ -63,7 +63,7 @@ class ModuleIncludeManagerTest extends TestCase
         $this->moduleIncludeManager->addBackendModule('MyBackendModule');
         
         $check = array(
-            'CoreTest',
+            'GingerCore',
             'BackendTest',
             'MyBackendModule',
         );
@@ -76,7 +76,7 @@ class ModuleIncludeManagerTest extends TestCase
         $this->moduleIncludeManager->addFrontendModule('MyFrontendModule');
         
         $check = array(
-            'CoreTest',
+            'GingerCore',
             'BackendTest',
             'FrontendTest',
             'MyFrontendModule'
@@ -91,7 +91,7 @@ class ModuleIncludeManagerTest extends TestCase
         $this->moduleIncludeManager->removeBackendModule('MyBackendModule');
         
         $check = array(
-            'CoreTest',
+            'GingerCore',
             'BackendTest',
         );
         
@@ -100,7 +100,7 @@ class ModuleIncludeManagerTest extends TestCase
         $this->moduleIncludeManager->removeBackendModule('BackendTest');
         
         $check = array(
-            'CoreTest',
+            'GingerCore',
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getBackendModulesList());                
@@ -113,7 +113,7 @@ class ModuleIncludeManagerTest extends TestCase
         $this->moduleIncludeManager->removeFrontendModule('MyFrontendModule');
         
         $check = array(
-            'CoreTest',
+            'GingerCore',
             'BackendTest',
             'FrontendTest',
         );
@@ -123,7 +123,7 @@ class ModuleIncludeManagerTest extends TestCase
         $this->moduleIncludeManager->removeFrontendModule('FrontendTest');
         
         $check = array(
-            'CoreTest',
+            'GingerCore',
             'BackendTest',
         );
         
