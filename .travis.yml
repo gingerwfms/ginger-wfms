@@ -4,6 +4,7 @@ php:
   - 5.4
 
 before_script:
+  - cp config/autoload/local.php.dist config/autoload/local.php
   - cp composer.json.dist composer.json
   - composer self-update
   - composer --dev install
