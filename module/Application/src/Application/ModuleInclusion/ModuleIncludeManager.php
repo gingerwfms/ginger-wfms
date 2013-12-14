@@ -19,6 +19,11 @@ class ModuleIncludeManager
 {
     protected $configDir;
     
+    /**
+     * Construct
+     * 
+     * @param string $configDir Dir where configuration files can be found
+     */
     public function __construct($configDir = null)
     {
         if (is_null($configDir)) {
@@ -28,6 +33,11 @@ class ModuleIncludeManager
         $this->configDir = $configDir;
     }
     
+    /**
+     * Get list of all actived modules needed to run the backend (core + backend)
+     * 
+     * @return array List of backend modules
+     */
     public function getBackendModulesList()
     {
         $coreModules = $this->loadCoreModulesList();
@@ -37,6 +47,11 @@ class ModuleIncludeManager
         return array_merge($coreModules, $backendModules);
     }
     
+    /**
+     * Get list of all actived modules (core, backend, frontend)
+     * 
+     * @return array List of all modules
+     */
     public function getAllModulesList()
     {
         $backendModules = $this->getBackendModulesList();
@@ -46,6 +61,13 @@ class ModuleIncludeManager
         return array_merge($backendModules, $frontendModules);
     }
     
+    /**
+     * Activate new backend module
+     * 
+     * @param string $name
+     * 
+     * @return void
+     */
     public function addBackendModule($name)
     {
         $backendModules = $this->loadBackendModulesList();
@@ -55,6 +77,13 @@ class ModuleIncludeManager
         $this->writeFile($backendModules, 'backend.modules.php');
     }
     
+    /**
+     * Active new frontend module
+     * 
+     * @param string $name
+     * 
+     * @return void
+     */
     public function addFrontendModule($name)
     {
         $frontendModules = $this->loadFrontendModulesList();
@@ -64,6 +93,13 @@ class ModuleIncludeManager
         $this->writeFile($frontendModules, 'frontend.modules.php');
     }
     
+    /**
+     * Deactivate backend module
+     * 
+     * @param string $name Name of module
+     * 
+     * @return void
+     */
     public function removeBackendModule($name)
     {
         $backendModules = $this->loadBackendModulesList();
@@ -75,6 +111,13 @@ class ModuleIncludeManager
         $this->writeFile($backendModules, 'backend.modules.php');
     }
     
+    /**
+     * Deactivate frontend module
+     * 
+     * @param string $name Name of the module
+     * 
+     * @return void
+     */
     public function removeFrontendModule($name)
     {
         $frontendModules = $this->loadFrontendModulesList();
@@ -86,21 +129,49 @@ class ModuleIncludeManager
         $this->writeFile($frontendModules, 'frontend.modules.php');
     }
     
+    /**
+     * Load core modules list
+     * 
+     * @return array List of core modules 
+     */
     protected function loadCoreModulesList()
     {
         return $this->readFile('core.modules.php');
     }
 
+    /**
+     * Load list of backend modules
+     * 
+     * @return array List of backend modules
+     */
     protected function loadBackendModulesList()
     {
         return $this->readFile('backend.modules.php');
     }
     
+    /**
+     * Load list of frontend modules
+     * 
+     * @return array List of frontend modules
+     */
     protected function loadFrontendModulesList()
     {
         return $this->readFile('frontend.modules.php');
     }
 
+    /**
+     * Read module list from given file
+     * 
+     * If file does not exist method checks if a .dist version of the file
+     * can be found instead. In this case the .dist file is copied and renamed
+     * to the requested filename.
+     * 
+     * @param string $filename
+     * @return array List of modules
+     * 
+     * @throws Exception\InvalidArgumentException If file can not be found
+     * @throws Exception\RuntimeException If copy of .dist file fails
+     */
     protected function readFile($filename)
     {
         $file = $this->configDir . '/' . $filename;
@@ -134,6 +205,14 @@ class ModuleIncludeManager
         return $moduleList;
     }
     
+    /**
+     * Write given module list to file
+     * 
+     * @param array $modules
+     * @param string $filename
+     * 
+     * @return void
+     */
     protected function writeFile(array $modules, $filename)
     {
         $file = $this->configDir . '/' . $filename;
