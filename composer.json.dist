@@ -26,13 +26,16 @@
         "malocher/zf2-cqrs-module" : "1.*",
         "mwillbanks/zfc-twitter-bootstrap" : "dev-master",
         "rwoverdijk/assetmanager" : "1.*"
-    },     
+    },  
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
     "extra": {
         "bootstrap": "Application\\Bootstrap\\BackendBootstrap"
     },
     "autoload": {
         "psr-0": {
-            "Application\\": "module/src"
+            "Application\\": "module/Application/src"
         }
     },
     "minimum-stability" : "dev"
