@@ -26,7 +26,8 @@ class BackendBootstrap
         // use ModuleManager to load core and backend modules
         $config = include 'config/application.config.php';
         
-        $coreModules = include 'config/core.modules.php';
+        //$coreModules = include 'config/core.modules.php';
+        $coreModules = array();
         $backendModules = include 'config/backend.modules.php.dist';
         
         $config['modules'] = array_merge($coreModules, $backendModules);
