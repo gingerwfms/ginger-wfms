@@ -1,5 +1,6 @@
 nbproject
 composer.json
+composer.lock
 *~
 ._*
 .~lock.*

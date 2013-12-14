@@ -19,6 +19,8 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "gingerwfms/ginger-plugin-installer" : "dev-master",
+        "gingerwfms/ginger-core" : "dev-master",
         "zendframework/zendframework": "2.2.*",
         "malocher/cqrs-esb" : "1.*",
         "malocher/zf2-cqrs-module" : "1.*",
@@ -26,6 +28,12 @@
         "rwoverdijk/assetmanager" : "1.*"
     },     
     "extra": {
-        "plugin-installer-bootstrap": "Ginger\\Core\\Bootstrap"
-    }
+        "bootstrap": "Application\\Bootstrap\\BackendBootstrap"
+    },
+    "autoload": {
+        "psr-0": {
+            "Application\\": "module/src"
+        }
+    },
+    "minimum-stability" : "dev"
 }

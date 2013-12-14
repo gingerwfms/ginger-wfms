@@ -27,7 +27,7 @@ class BackendBootstrap
         $config = include 'config/application.config.php';
         
         $coreModules = include 'config/core.modules.php';
-        $backendModules = include 'config/backend.modules.php';
+        $backendModules = include 'config/backend.modules.php.dist';
         
         $config['modules'] = array_merge($coreModules, $backendModules);
 
