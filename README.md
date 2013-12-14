@@ -7,7 +7,7 @@ complex scenarios with parallel tasks and condition based routing.
 
 [![Build Status](https://travis-ci.org/gingerwfms/ginger-wfms.png?branch=master)](https://travis-ci.org/gingerwfms/ginger-wfms)
 
-The software is an early state. I will provide more information soon.
+The software is in an early state. I will provide more information soon.
 If you wanna help working on it, please let me know and I will provide you with detailed information about it.
-Contact me via email kontakt[at]codeliner.ws
+You can find me on [www.codeliner.ws](http://www.codeliner.ws).
 
