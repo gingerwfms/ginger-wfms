@@ -9,19 +9,11 @@ chdir(dirname(__DIR__));
 if (php_sapi_name() === 'cli-server' && is_file(__DIR__ . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))) {
     return false;
 }
+require 'module/Application/src/Application/Bootstrap/BootstrapInterface.php';
+require 'module/Application/src/Application/Bootstrap/AbstractBootstrap.php';
+require 'module/Application/src/Application/Bootstrap/FrontendBootstrap.php';
 
-// Setup autoloading
-require 'init_autoloader.php';
+\Application\Bootstrap\FrontendBootstrap::init();
 
-$appConfig = require 'config/application.config.php';
-
-$coreModules = include 'config/core.modules.php';
-$backendModules = include 'config/backend.modules.php';
-$frontendModules = include 'config/frontend.modules.php';
-
-$modules = array_merge($coreModules, $backendModules, $frontendModules);
-
-$appConfig['modules'] = $modules;
-
-// Run the application!
-Zend\Mvc\Application::init($appConfig)->run();
+\Application\Bootstrap\FrontendBootstrap::getServiceManager()
+    ->get('Application')->bootstrap()->run();

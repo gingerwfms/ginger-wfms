@@ -9,14 +9,14 @@
 namespace Application\Bootstrap;
 
 /**
- *  Bootstrap
+ *  FrontendBootstrap
  * 
  * @author Alexander Miertsch <kontakt@codeliner.ws>
  */
-class BackendBootstrap extends AbstractBootstrap
+class FrontendBootstrap extends AbstractBootstrap
 {
     public static function getModulesList()
     {
-        return static::getModuleIncludeManager()->getBackendModulesList();
+        return static::getModuleIncludeManager()->getAllModulesList();
     }
 }
