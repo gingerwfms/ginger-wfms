@@ -42,9 +42,9 @@ class ModuleIncludeManagerTest extends TestCase
     public function testGetBackendModulesList()
     {
         $check = array(
-            'GingerCore',
-            'MalocherCqrsModule',
-            'BackendTest'
+            'GingerCore' => 'module',
+            'MalocherCqrsModule' => 'vendor',
+            'BackendTest' => 'plugin'
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getBackendModulesList());
@@ -53,10 +53,10 @@ class ModuleIncludeManagerTest extends TestCase
     public function testGetAllModulesList()
     {
         $check = array(
-            'GingerCore',
-            'MalocherCqrsModule',
-            'BackendTest',
-            'FrontendTest'
+            'GingerCore' => 'module',
+            'MalocherCqrsModule' => 'vendor',
+            'BackendTest' => 'plugin',
+            'FrontendTest' => 'plugin'
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getAllModulesList());
@@ -64,13 +64,13 @@ class ModuleIncludeManagerTest extends TestCase
     
     public function testAddBackendModule()
     {
-        $this->moduleIncludeManager->addBackendModule('MyBackendModule');
+        $this->moduleIncludeManager->addBackendModule('MyBackendModule', 'my/backend-module-name');
         
         $check = array(
-            'GingerCore',
-            'MalocherCqrsModule',
-            'BackendTest',
-            'MyBackendModule',
+            'GingerCore' => 'module',
+            'MalocherCqrsModule' => 'vendor',
+            'BackendTest' => 'plugin',
+            'MyBackendModule' => 'my/backend-module-name',
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getBackendModulesList());
@@ -78,14 +78,14 @@ class ModuleIncludeManagerTest extends TestCase
     
     public function testAddFrontendModule()
     {
-        $this->moduleIncludeManager->addFrontendModule('MyFrontendModule');
+        $this->moduleIncludeManager->addFrontendModule('MyFrontendModule', 'my/frontend-module-name');
         
         $check = array(
-            'GingerCore',
-            'MalocherCqrsModule',
-            'BackendTest',
-            'FrontendTest',
-            'MyFrontendModule'
+            'GingerCore' => 'module',
+            'MalocherCqrsModule' => 'vendor',
+            'BackendTest' => 'plugin',
+            'FrontendTest' => 'plugin',
+            'MyFrontendModule' => 'my/frontend-module-name'
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getAllModulesList());
@@ -93,13 +93,13 @@ class ModuleIncludeManagerTest extends TestCase
     
     public function testRemoveBackendModule()
     {
-        $this->moduleIncludeManager->addBackendModule('MyBackendModule');
+        $this->moduleIncludeManager->addBackendModule('MyBackendModule', 'my/backend-module-name');
         $this->moduleIncludeManager->removeBackendModule('MyBackendModule');
         
         $check = array(
-            'GingerCore',
-            'MalocherCqrsModule',
-            'BackendTest',
+            'GingerCore' => 'module',
+            'MalocherCqrsModule' => 'vendor',
+            'BackendTest' => 'plugin',
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getBackendModulesList());
@@ -107,8 +107,8 @@ class ModuleIncludeManagerTest extends TestCase
         $this->moduleIncludeManager->removeBackendModule('BackendTest');
         
         $check = array(
-            'GingerCore',
-            'MalocherCqrsModule',
+            'GingerCore' => 'module',
+            'MalocherCqrsModule' => 'vendor',
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getBackendModulesList());                
@@ -116,15 +116,15 @@ class ModuleIncludeManagerTest extends TestCase
     
     public function testRemoveFrontendModule()
     {
-        $this->moduleIncludeManager->addFrontendModule('MyFrontendModule');
+        $this->moduleIncludeManager->addFrontendModule('MyFrontendModule', 'my/frontend-module-name');
         
         $this->moduleIncludeManager->removeFrontendModule('MyFrontendModule');
         
         $check = array(
-            'GingerCore',
-            'MalocherCqrsModule',
-            'BackendTest',
-            'FrontendTest',
+            'GingerCore' => 'module',
+            'MalocherCqrsModule' => 'vendor',
+            'BackendTest' => 'plugin',
+            'FrontendTest' => 'plugin',
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getAllModulesList());
@@ -132,9 +132,9 @@ class ModuleIncludeManagerTest extends TestCase
         $this->moduleIncludeManager->removeFrontendModule('FrontendTest');
         
         $check = array(
-            'GingerCore',
-            'MalocherCqrsModule',
-            'BackendTest',
+            'GingerCore' => 'module',
+            'MalocherCqrsModule' => 'vendor',
+            'BackendTest' => 'plugin',
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getAllModulesList());

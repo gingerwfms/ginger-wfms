@@ -67,9 +67,9 @@ class PluginHandlerTest extends TestCase
             ->publishEvent($pluginInstalledEvent);
         
         $check = array(
-            'GingerCore',
-            'MalocherCqrsModule',
-            'WfConfiguratorBackend'
+            'GingerCore' => 'module',
+            'MalocherCqrsModule' => 'vendor',
+            'WfConfiguratorBackend' => 'gingerwfms/wf-configurator-backend'
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getBackendModulesList());
@@ -90,9 +90,9 @@ class PluginHandlerTest extends TestCase
             ->publishEvent($pluginInstalledEvent);
         
         $check = array(
-            'GingerCore',
-            'MalocherCqrsModule',
-            'WfConfiguratorFrontend'
+            'GingerCore' => 'module',
+            'MalocherCqrsModule' => 'vendor',
+            'WfConfiguratorFrontend' => 'gingerwfms/wf-configurator-frontend'
         );
         
         $this->assertEquals($check, $this->moduleIncludeManager->getAllModulesList());

@@ -64,15 +64,16 @@ class ModuleIncludeManager
     /**
      * Activate new backend module
      * 
-     * @param string $name
+     * @param string $namespace   Module namespace
+     * @param string $packageName Name of the package incl. vendor name
      * 
      * @return void
      */
-    public function addBackendModule($name)
+    public function addBackendModule($namespace, $packageName)
     {
         $backendModules = $this->loadBackendModulesList();
         
-        $backendModules[] = $name;
+        $backendModules[$namespace] = $packageName;
         
         $this->writeFile($backendModules, 'backend.modules.php');
     }
@@ -80,15 +81,16 @@ class ModuleIncludeManager
     /**
      * Active new frontend module
      * 
-     * @param string $name
+     * @param string $namespace   Module namespace
+     * @param string $packageName Name of the package incl. vendor name
      * 
      * @return void
      */
-    public function addFrontendModule($name)
+    public function addFrontendModule($namespace, $packageName)
     {
         $frontendModules = $this->loadFrontendModulesList();
         
-        $frontendModules[] = $name;
+        $frontendModules[$namespace] = $packageName;
         
         $this->writeFile($frontendModules, 'frontend.modules.php');
     }
@@ -96,17 +98,15 @@ class ModuleIncludeManager
     /**
      * Deactivate backend module
      * 
-     * @param string $name Name of module
+     * @param string $namespace Module namespace
      * 
      * @return void
      */
-    public function removeBackendModule($name)
+    public function removeBackendModule($namespace)
     {
         $backendModules = $this->loadBackendModulesList();
         
-        $index = array_search($name, $backendModules);
-        
-        unset($backendModules[$index]);
+        unset($backendModules[$namespace]);
         
         $this->writeFile($backendModules, 'backend.modules.php');
     }
@@ -114,17 +114,15 @@ class ModuleIncludeManager
     /**
      * Deactivate frontend module
      * 
-     * @param string $name Name of the module
+     * @param string $namespace Module namespace
      * 
      * @return void
      */
-    public function removeFrontendModule($name)
+    public function removeFrontendModule($namespace)
     {
         $frontendModules = $this->loadFrontendModulesList();
         
-        $index = array_search($name, $frontendModules);
-        
-        unset($frontendModules[$index]);
+        unset($frontendModules[$namespace]);
         
         $this->writeFile($frontendModules, 'frontend.modules.php');
     }

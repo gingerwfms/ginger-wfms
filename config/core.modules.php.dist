@@ -7,6 +7,6 @@
  * file that was distributed with this source code.
  */
 return array(
-    'GingerCore',
-    'MalocherCqrsModule'
+    'GingerCore' => 'module',
+     'MalocherCqrsModule' => 'vendor'
 );

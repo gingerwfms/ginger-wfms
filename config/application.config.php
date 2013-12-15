@@ -9,9 +9,7 @@ return array(
         ),
         'module_paths' => array(
             './module',
-            './module/Ginger',
             './vendor',
-            './plugin',
         ),
     ),
 );

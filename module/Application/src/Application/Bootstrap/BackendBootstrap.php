@@ -29,7 +29,30 @@ class BackendBootstrap
         // use ModuleManager to load core and backend modules
         $config = include 'config/application.config.php';
         
-        $config['modules'] = static::getModuleIncludeManager()->getBackendModulesList();
+        $backendModules = static::getModuleIncludeManager()->getBackendModulesList();
+         
+        $config['modules'] = array_keys($backendModules);
+        
+        $modulePaths = $config['module_listener_options']['module_paths'];
+         
+        foreach ($backendModules as $namespace => $packageNameOrDir) {
+            switch ($packageNameOrDir) {
+                case 'vendor':
+                    //vendor dir is already registered in module paths
+                    break;
+                case 'module':
+                    //module dir is already registered in module paths
+                    break;
+                default:
+                    //packageName means direct mapping
+                    $modulePaths[$namespace] = 'plugin/' 
+                    . $packageNameOrDir . '/src/'
+                    . $namespace;
+                    
+            }
+        }
+        
+        $config['module_listener_options']['module_paths'] = $modulePaths;
 
         $serviceManager = new ServiceManager(new ServiceManagerConfig());
         $serviceManager->setService('ApplicationConfig', $config);

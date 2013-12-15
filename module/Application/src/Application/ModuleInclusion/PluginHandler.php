@@ -45,10 +45,18 @@ class PluginHandler
     {
         switch ($event->getPluginType()) {
             case 'ginger-backend-plugin':                    
-                    $this->moduleIncludeManager->addBackendModule($event->getPluginNamespace());
+                $this->moduleIncludeManager
+                    ->addBackendModule(
+                        $event->getPluginNamespace(), 
+                        $event->getPluginName()
+                    );
                 break;
             case 'ginger-frontend-plugin';
-                    $this->moduleIncludeManager->addFrontendModule($event->getPluginNamespace());
+                    $this->moduleIncludeManager
+                        ->addFrontendModule(
+                            $event->getPluginNamespace(), 
+                            $event->getPluginName()
+                        );
                 break;
             default:
                 throw new Exception\InvalidArgumentException(
