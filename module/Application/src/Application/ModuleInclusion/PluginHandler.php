@@ -43,10 +43,8 @@ class PluginHandler
      */
     public function onPluginInstalled(Cqrs\PluginInstalledEvent $event)
     {
-        echo "here we go: " . $event->getPluginType();
         switch ($event->getPluginType()) {
-            case 'ginger-backend-plugin':
-                    echo " add plugin: " . $event->getPluginNamespace();
+            case 'ginger-backend-plugin':                    
                     $this->moduleIncludeManager->addBackendModule($event->getPluginNamespace());
                 break;
             case 'ginger-frontend-plugin';
