@@ -14,7 +14,7 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'crud_repository_adapter' => 'Ginger\Core\Repository\Adapter\MongoDbCrudAdapterFactory',
+            'crud_repository_adapter' => 'GingerCore\Repository\Adapter\MongoDbCrudAdapterFactory',
             'plugin_handler' => 'Application\ModuleInclusion\Service\PluginHandlerFactory',
         ),
         'invokables' => array(
