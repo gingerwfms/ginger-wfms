@@ -34,7 +34,7 @@ class ModuleIncludeManager
     }
     
     /**
-     * Get list of all actived modules needed to run the backend (core + backend)
+     * Get list of all activated modules needed to run the backend (core + backend)
      * 
      * @return array List of backend modules
      */
@@ -48,7 +48,7 @@ class ModuleIncludeManager
     }
     
     /**
-     * Get list of all actived modules (core, backend, frontend)
+     * Get list of all activated modules (core, backend, frontend)
      * 
      * @return array List of all modules
      */
@@ -79,7 +79,7 @@ class ModuleIncludeManager
     }
     
     /**
-     * Active new frontend module
+     * Activate new frontend module
      * 
      * @param string $namespace   Module namespace
      * @param string $packageName Name of the package incl. vendor name
